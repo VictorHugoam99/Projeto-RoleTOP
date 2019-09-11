@@ -1,0 +1,150 @@
+body{
+    font-family: 'Calibri', 'Opens Sans', sans-serif; 
+    background-color:#660892;
+    height: 1000px;
+    width: 1890px;
+    background-image: linear-gradient(#7d0093, #000000);   
+}
+
+main {
+    width: 80%;
+}
+
+#painel {
+    display: flex;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-family: 'Calibri', 'Opens Sans', sans-serif; 
+    color: #fff;
+}
+
+h2 strong {
+    color: #ffc600;
+    font-family: 'Calibri', 'Opens Sans', sans-serif;  
+}
+
+h3 {
+    padding: 0.5em 0;
+    font-size: 1.3em;
+    color: #000000;
+    text-shadow: 
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+   -1px  1px 0 #fff,
+    1px  1px 0 #fff;
+}
+
+h4 {
+    font-size: 2em;
+    font-family: 'Fredoka One', cursive;
+}
+
+.box-status-pedidos {
+    width: 30%;
+    padding-top: .5em;
+    text-align: center;
+}
+.box-status-pedidos > p {
+    font-size: 2em;
+    padding: 0.5em 0 0 0;
+}
+
+.box-status-pedidos.reprovados {
+    background-color: #a70000;
+}
+
+.box-status-pedidos.aprovados {
+    background-color: #669100;
+}
+
+.box-status-pedidos.pendentes {
+    background-color: #ffc600;
+}
+
+table {
+    text-align: center;
+    color: #fff;
+    border: 1px dashed #ffffff;
+    width: 100%;
+    padding: 5px;
+    word-break: normal;
+}
+
+table th {
+    background-color:#ffc600;
+}
+
+table a {
+    text-decoration: none;
+    color: #fff;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+tfoot td {
+    text-align: center;
+    color: #ffc600;
+    background-color: #000000;
+}
+
+thead > tr:first-child > th:last-child {
+    padding: 0 .5em;
+}
+
+@media (max-width: 625px) {
+    main {
+        width: 90%;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+
+}
+
+#icon-rodape img {
+    width: 2em;
+    padding: 0.3em;
+    border-right: 2.5px solid black;
+    margin-top: 2%;
+   }
+   #copy {
+    display: flex;
+    padding: 4px;
+   }
+   #copy img {
+    width: 2em;
+    padding: 0.3em;
+   }
+   #copy p {
+    margin-top: 5%;
+    font-weight: bold;
+   }
+   #rodape-baixo {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    height: 50px;
+    background-color: white;
+   }
+   #description p {
+    margin-top: 6%;
+    font-weight: bold;
+   }
+
+  footer {
+      padding: 375px 0 0 0;
+  }
+
+  #voltarpgprinc a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 0 0 0 600px;
+  }

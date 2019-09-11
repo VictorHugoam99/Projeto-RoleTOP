@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="img/logo.png" rel="icon" type="image/x-icon">
+        <link href="style-sucesso.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
+        <title>Sucesso!</title>
+    </head>
+    <body>
+       
+        <main>
+            <div id="flex">
+                <h2>RolêTOP</h2>
+                <p>Nós da Rolê Top agradecemos sua preferência. Voltem sempre !</p>
+                
+                <br>
+                <br>
+            </div>
+        </main>
+        <p id="voltarpgprinc">
+                <a href="Telauser.html"><< Voltar para a página principal</a>
+            </p>
+        <script>
+            function toggleMobileMenu() {
+                var ul = document.querySelector("nav ul");
+                var commonButtons = document.querySelectorAll("nav .bt-common-menu");
+                var icon = document.querySelector(".icon > i");
+    
+                ul.classList.toggle("mobile-mode");
+    
+                if (icon.classList.contains("fa-bars")) {
+                    icon.classList.remove("fa-bars");
+                    icon.classList.remove("fa");
+    
+                    icon.classList.add("fas");
+                    icon.classList.add("fa-skull");
+                } else {
+                    icon.classList.remove("fas");
+                    icon.classList.remove("fa-skull");
+    
+                    icon.classList.add("fa");
+                    icon.classList.add("fa-bars");
+                }
+    
+                for (var button of commonButtons) {
+                    button.classList.toggle("active");
+                }
+    
+            }
+        </script>
+    </body>
+</html>

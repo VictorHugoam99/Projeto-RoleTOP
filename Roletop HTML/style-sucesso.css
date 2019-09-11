@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Calibri', 'Opens Sans', sans-serif; 
+    height: 1000px;
+    width: 1900px;
+    background-color:(#7d0093);
+    background-image: linear-gradient(#7d0093, #000000); 
+}
+hr {
+    margin-top: 10px;
+    border: 1px solid white;
+}
+a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+li {
+    list-style: none;
+    font-size: 1.9em;
+}
+li a:hover {
+    color: white;
+    text-shadow: 3px 3px black;
+}
+div#section-container ul li img#login {
+    height: 75px;
+    border-radius: 50%;
+}
+div#section-container ul li img#logo {
+    height: 160px;
+    margin-top: 10px; 
+}
+div#section-container {
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav #bt-mobile-menu {
+    display: none;
+}
+h2 {
+    font-size: 5em;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    color: #f7ff0a;
+    text-shadow: 2px 2px black;
+    margin-top: 20px;
+}
+p {
+    font-size: 3em;
+    margin-top: 10px;
+}
+div#flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+#voltarpgprinc a {
+    font-size: 0,2em;
+    color: aliceblue;
+    
+}
+
+main {
+    text-align: center;
+    color: #cbd111;
+}
+main a {
+    width: 225px;
+    height: 225px;
+    margin-top: 15px;
+}
+main a img {
+    border-radius: 50%;
+    width: 50%;
+}
+#rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+section#endereco {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+@media (max-width: 625px) {
+    nav #bt-mobile-menu {
+        display: block;
+    }
+
+    nav .bt-common-menu {
+        display: none;
+    }
+
+    nav .bt-common-menu.active {
+        display: block;
+    }
+
+    nav ul.mobile-mode {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 485px) {
+    #gradient {
+        width: 400px;
+    }
+    #gradient > img {
+        width: 400px;
+    }
+    #local {
+        width: 400px;
+    }
+}
