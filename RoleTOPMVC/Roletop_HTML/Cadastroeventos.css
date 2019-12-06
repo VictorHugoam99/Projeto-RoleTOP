@@ -1,0 +1,125 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body, html {
+    font-family: 'Calibri', 'Opens Sans', sans-serif;  
+    background-color:#660892;
+    height: 100%;
+    width: 100%;
+    background-color:(#7d0093);
+    background-image: linear-gradient(#7d0093, #000000);   
+}
+
+.container {
+    padding: 200px 0 0 0;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .container a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 0 0 385px;
+  }
+  
+  .form-contact {
+    width: 100%;
+    font-family: "Arial", Times, serif;
+  }
+  
+  .form-contact-input {
+    width: 100%;
+    color: #292929;
+    font-size: 18px;
+    background-color: #E9E9E9;
+    border: 1px solid #E9E9E9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    text-indent: 20px;
+  }
+  
+  .form-contact-textarea {
+    width: 100%;
+    color: #292929;
+    font-size: 18px;
+    background-color: #E9E9E9;
+    border: 1px solid #E9E9E9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 200px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    text-indent: 20px;
+    padding-top: 16px;
+    padding-left: 0;
+    padding-right: 0;
+    font-family: "Arial", Times, serif;
+  }
+  
+  .form-contact-button {
+    width: 100%;
+    font-size: 18px;
+    border-radius: 4px;
+    color: #fff;
+    height: 40px;
+    opacity: .8;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background: #7d0093;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    transition: 1s;
+  }
+  
+  .form-contact-button:hover {
+    opacity: 1;
+  }
+  
+  #cadastroev {
+    padding: 50px 0 0 700px;
+    color: aliceblue;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.3em;  
+    color: #E9E9E9;
+}
+
+#cadastroev strong {
+    color: #ffc600;
+}
+
+#voltarpgprinc li {
+    color: #E9E9E9;
+    text-decoration: none;
+
+}
+
+#pagamento {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  main, #pagamento, {
+    visibility: visible;
+    opacity: 1;
+  }
+  #cadastroev {
+    padding: 0;
+  }
+  #voltarpgprinc li {
+    padding: 0;
+  }
+  #voltarpgprinc a {
+    padding: 0;
+  }
+}
