@@ -1,19 +1,18 @@
 <main>
-    
-        <div class="container">
-        <form action="#" class="form-contact" method="post" tabindex="1">
-        <input type="text" class="form-contact-input" name="nome" placeholder="Nome" required />
-        <input type="tel" class="form-contact-input" name="senha" placeholder="Senha" required/>
-        <input type="tel" class="form-contact-input" name="senha" placeholder="Confirme sua senha" required/>
-        <input type="email" class="form-contact-input" name="email" placeholder="Email" required />
-        <input type="email" class="form-contact-input" name="email" placeholder="Confirme seu Email" required />
-        <input type="tel" class="form-contact-input" name="tel" placeholder="Telefone" required/>
-        <input type="tel" class="form-contact-input" name="tel" placeholder="Telefone"/>
-        <a href="Telauser.html">Criar conta  >></a>
+    <div class="container">
+        <h2 style="text-align:center"> Cadastro</h2>
+        <form method="POST" action='@Url.Action("CadastrarCliente", "Cadastro")' class="form-contact" >
+            <input type="text" class="form-contact-input" name="nome" placeholder="Nome" required />
+            <input type="tel" class="form-contact-input" name="senha" placeholder="Senha" required/>
+            <input type="tel" class="form-contact-input" name="senha" placeholder="Confirme sua senha" required/>
+            <input type="email" class="form-contact-input" name="email" placeholder="Email" required />
+            <input type="email" class="form-contact-input" name="email" placeholder="Confirme seu Email" required />
+            <input type="tel" class="form-contact-input" name="tel" placeholder="Telefone" required/>
+            <input type="tel" class="form-contact-input" name="tel" placeholder="Telefone"/>
+            <a asp-controller= "Cliente" asp-Action= "index">Criar conta  >></a>
         </form>
-    <div id="voltarpgprinc">
-        <li><a href="Telauser.html"><< Voltar para página do usuário</a></li>
+        <div id="voltarpgprinc">
+            <li><a asp-controller= "Home" asp-Action= "Index"><< Voltar para página principal</a></li>
         </div>
     </div>
-    </div>
-    </main>
+</main>

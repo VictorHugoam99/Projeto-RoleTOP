@@ -1,5 +1,6 @@
 <main>
-	
+	<form method="POST" action='@Url.Action("login", "Cliente")'>
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -32,7 +33,7 @@
 
 					<div class="container-login100-form-btn">
 						
-					<a href="Telauser.html">Entrar</a>
+					<input type="submit" value="Entrar!" />
 					</div>
 					
 					<div class="text-center p-t-90">
@@ -41,12 +42,13 @@
 						</a>
 					</div>
 					<div class="voltarpgprinc">
-						<a href="Roletop.html"> Voltar para a página principal</a>
+						<a asp-Controller="Home" asp-Action="Index"> Voltar para a página principal</a>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
+	</form>
 	
 
 	<div id="dropDownSelect1"></div>

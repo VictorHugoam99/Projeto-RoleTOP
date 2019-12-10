@@ -11,10 +11,10 @@ namespace RoleTOPMVC.Controllers
 
         protected string ObterUsuarioSession()
         {
-            var usuario = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
-            if (!string.IsNullOrEmpty(usuario))
+            var email  = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
+            if (!string.IsNullOrEmpty(email))
             {
-                return usuario;
+                return email;
             }else
             {
                 return "";

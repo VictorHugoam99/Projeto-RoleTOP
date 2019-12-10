@@ -33,6 +33,9 @@ namespace RoleTOPMVC
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSession(options => {
+                options.Cookie.IsEssential = true;
+            });
             
         }
 
@@ -53,6 +56,7 @@ namespace RoleTOPMVC
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

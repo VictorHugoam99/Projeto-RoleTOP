@@ -1,77 +1,106 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@model RoleTOPMVC.ViewModels.BaseViewModel
+
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - RoleTOPMVC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RoleTop</title>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/util.css">
+    @if("Home".Equals(@Model.NomeView))
+    {
+        <link rel="stylesheet" href="~/css/Roletop.css">
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-            asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
-            crossorigin="anonymous"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
-    </environment>
-    <link rel="stylesheet" href="~/css/site.css" />
+    }
+    @if("Cadastro".Equals(@Model.NomeView))
+    {
+    <link rel="stylesheet" href="~/css/Cadastro.css">
+    
+    }
+    @if("Login".Equals(@Model.NomeView))
+    {
+    
+	<link rel="stylesheet" type="text/css" href="~/css/login.css">
+    }
+
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RoleTOPMVC</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+
+<header>
+            @if(!"Cadastro".Equals(@Model.NomeView) && !"Login".Equals(@Model.NomeView)) 
+            {
+                        <div id="logo-area">
+                        
+                                <img src="~/img/logo (2).png" alt="Logotipo de um role muito top" title="logo" width="500" height="400"/>
+                                <hgroup>
+                                    <h2> O seu evento aqui é TOP</h2>
+                                </hgroup>
+                            </div>
+                            <hr>
+                            <nav>
+                                <div class="section-container">
+                                    <ul>
+                                        <li id="bt-mobile-menu">
+                                            <!-- HTML para colocar os ícones do FA -->
+                                            <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()">
+                                                <i class="fa fa-bars"></i>
+                                            </a>
+                                        </li>
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")'class="active">Principal</a></li>
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#nosso-espaço'>Espaço</a></li>
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#Eventos'>Eventos</a></li>
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#historia'>História</a></li>
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#perguntas-frequentes'>Dúvidas</a></li>
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cadastro" asp-action= "index" class="active">Cadastre-se</a></li>
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action= "Login" class="active">Login</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </nav>
+                        
+                        <hr>
+                    
+            }
+            
+        
     </header>
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+@RenderBody()
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - RoleTOPMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+            <footer>
+            @if(!"Cadastro".Equals(@Model.NomeView) && !"Login".Equals(@Model.NomeView))
+            {
+                            <div id="contato">
+                                <h3>Contato</h3>
+                                    <ul>
+                                        <li><address><img src="~/img/right-arrow-symbol_icon-icons.com_72946.png">R. Alameda Barão de Limeira, 539</address></li>
+                                        <li><address><img src="~/img/right-arrow-symbol_icon-icons.com_72946.png">São Paulo, SP</address></li>
+                                        <li><address><img src="~/img/right-arrow-symbol_icon-icons.com_72946.png">(11) 4002-8922</address></li>
+                                        <li><address><img src="~/img/right-arrow-symbol_icon-icons.com_72946.png">(11) 98574-8485</address></li>
+                                        <li><address><img src="~/img/right-arrow-symbol_icon-icons.com_72946.png">emaildecontato@hotmail.com</address></li>
+                                    </ul>
+                            </div>
+                            
+                                    
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
-        </script>
-    </environment>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+                        
+                    
+                    <div id="rodape-baixo">
+                        <div id="copy">
+                            <img src="~/img/-copyright_90662.png">
+                            <p>Todos os direitos reservados.</p>
+                        </div>
+                        <div id="icon-rodape">
+                            <img src="~/img/social_instagram_3.png" style="border-left: 2.5px solid black"> <img src="~/img/whatsapp-black_100119.png" alt=""> <img src="~/img/social_facebook_fb_35.png">
+                        </div>
+                        <div id="description">
+                            <p>RoleTop | Festas e Eventos Sociais</p>
+                            <a href="#">Voltar para o topo!</a>
+                        </div>
+                    </div>
 
-    @RenderSection("Scripts", required: false)
-</body>
-</html>
+            }
+            
+           
+            </footer>

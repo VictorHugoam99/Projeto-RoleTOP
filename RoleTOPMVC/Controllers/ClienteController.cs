@@ -10,7 +10,7 @@ namespace RoleTOPMVC.Controllers {
         private ClienteRepository clienteRepository = new ClienteRepository();
         private EventoRepository eventoRepository = new EventoRepository();
 
-        
+        [HttpGet]
         public IActionResult Login () {
             return View (new BaseViewModel()
             {
@@ -20,7 +20,7 @@ namespace RoleTOPMVC.Controllers {
             });
         }
 
-        
+        [HttpPost]
         public IActionResult Login (IFormCollection form) {
 
             ViewData["Action"] = "Login";
@@ -45,14 +45,14 @@ namespace RoleTOPMVC.Controllers {
                                 HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
                                 HttpContext.Session.SetString(SESSION_CLIENTE_TIPO, cliente.TipoUsuario.ToString());
                         
-                                return RedirectToAction("Historico", "Cliente");
+                                return RedirectToAction("index", "Cliente");
                         
                             default:
                                 HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);
                                 HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
                                 HttpContext.Session.SetString(SESSION_CLIENTE_TIPO, cliente.TipoUsuario.ToString());
                         
-                                return RedirectToAction("DashBoard", "Administrador");
+                                return RedirectToAction("DashBoard", "Admin");
                             
                         }
                     }else

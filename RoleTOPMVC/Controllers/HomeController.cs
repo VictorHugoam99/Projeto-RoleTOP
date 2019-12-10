@@ -1,11 +1,13 @@
 ﻿using RoleTOPMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace RoleTOPMVC.Controllers {
-    public class HomeController : AbstractController {
-        public IActionResult Index () {
-            
-            return View (new BaseViewModel()
+namespace RoleTOPMVC.Controllers 
+{
+    public class HomeController : AbstractController 
+    {
+        public IActionResult Index () 
+        {            
+            return View(new BaseViewModel()
             {
                 NomeView = "Home",
                 UsuarioEmail = ObterUsuarioSession(),
@@ -13,7 +15,8 @@ namespace RoleTOPMVC.Controllers {
             });
         }
 
-        public IActionResult Privacy () {
+        public IActionResult Privacy() 
+        {
             return View ();
         }
 
