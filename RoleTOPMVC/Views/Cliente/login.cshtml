@@ -1,5 +1,5 @@
 <main>
-	<form method="POST" action='@Url.Action("login", "Cliente")'>
+	<form method="POST" action='@Url.Action("Login", "Cliente")'>
 
 	<div class="limiter">
 		<div class="container-login100">
@@ -9,18 +9,18 @@
 						<i class="zmdi zmdi-landscape"></i>
 					</span>
 
-					<span class="login100-form-title p-b-34 p-t-27">
+					<!-- '<span type="submit" class="login100-form-title p-b-34 p-t-27">
 						Entrar
-					</span>
+					</span>' -->
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="username" placeholder="Usuário">
+						<input class="input100" type="text" name="email" required placeholder="Usuário">
 						
 						
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Senha">
+						<input class="input100" type="password" name="senha" required placeholder="Senha">
 						
 					</div>
 

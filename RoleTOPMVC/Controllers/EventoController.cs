@@ -13,16 +13,19 @@ namespace RoleTOPMVC.Controllers
         ClienteRepository clienteRepository = new ClienteRepository();
         EspaçoRepository espaçoRepository = new EspaçoRepository();
         EventoRepository eventoRepository = new EventoRepository();
+        AdicionalRepository adicionalRepository = new AdicionalRepository();
 
         [HttpGet]
         public IActionResult Index()
         {
             var espaço = espaçoRepository.ObterTodos();
-
-            PedidoViewModel pvm = new PedidoViewModel(); 
-            pvm.Espaços = espaçoRepository.ObterTodos();
-
             var emailCliente = ObterUsuarioSession();
+
+            EventoViewModel pvm = new EventoViewModel(); 
+            pvm.Espaços = espaçoRepository.ObterTodos();
+            pvm.Adicionais = adicionalRepository.ObterTodos();
+            pvm.Eventos = eventoRepository.ObterTodosPorCliente(emailCliente);
+
             if (!string.IsNullOrEmpty(emailCliente))
             {
                 pvm.Cliente = clienteRepository.ObterPor(emailCliente);
@@ -47,15 +50,20 @@ namespace RoleTOPMVC.Controllers
             Espaço espaço = new Espaço (nomeEspaço, espaçoRepository.ObterPrecoDe(nomeEspaço));
             evento.Espaço = espaço;
 
+            var nomeAdicional = form["Adicional"];
+            Adicional adicional = new Adicional (nomeAdicional, adicionalRepository.ObterPrecoDe(nomeAdicional));
+            evento.Adicional = adicional;
+
             Cliente cliente = new Cliente();
             cliente.Nome = form["nome"];
             cliente.CPF = form["endereco"];
             cliente.Telefone = form["CPF"];
             cliente.Email = form["email"];
+            cliente.Telefone = form["telefone"];
 
             evento.Cliente = cliente;
-            evento.DataDoPedido = DateTime.Now;
-            evento.PrecoTotal = espaçoRepository.ObterPrecoDe(nomeEspaço);
+            evento.DataDoPedido =DateTime.Parse(form["data_evento"]);
+            evento.PrecoTotal = espaçoRepository.ObterPrecoDe(nomeEspaço) + adicionalRepository.ObterPrecoDe(nomeAdicional);
 
             if (eventoRepository.Inserir(evento))
             {
@@ -78,7 +86,7 @@ namespace RoleTOPMVC.Controllers
         public IActionResult Aprovar(ulong id)
         {
             var evento = eventoRepository.ObterPor(id);
-            evento.Status = (uint) StatusAluguel.APROVADO;
+            evento.Status = (uint) StatusEvento.APROVADO;
             
             if (eventoRepository.Atualizar(evento))
             {
@@ -98,7 +106,7 @@ namespace RoleTOPMVC.Controllers
         public IActionResult Reprovar (ulong id)
         {
             var evento = eventoRepository.ObterPor(id);
-            evento.Status = (uint) StatusAluguel.REPROVADO;
+            evento.Status = (uint) StatusEvento.REPROVADO;
             
             if (eventoRepository.Atualizar(evento))
             {
@@ -113,6 +121,19 @@ namespace RoleTOPMVC.Controllers
                     UsuarioNome = ObterUsuarioNomeSession()
                 });
             }
+        }
+        public IActionResult Historico ()
+        {
+            var emailCliente = ObterUsuarioSession();
+            var pedidoCliente = eventoRepository.ObterTodosPorCliente(emailCliente);
+
+            return View(new EventoViewModel()
+            {
+                Eventos = pedidoCliente,
+                NomeView = "Dashboard",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
         }
     }
 }

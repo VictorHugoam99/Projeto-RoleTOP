@@ -4,17 +4,17 @@ using RoleTOPMVC.Models;
 
 namespace RoleTOPMVC.Repositories
 {
-    public class EspaçoRepository
+    public class AdicionalRepository
     {
-        private const string PATH = "Database/Espaço.csv";
+        private const string PATH = "Database/Adicionais.csv";
 
-        public double ObterPrecoDe(string nomeEspaço)
+        public double ObterPrecoDe(string nomeAdicional)
         {
             var lista = ObterTodos();
             var preco = 0.0;
             foreach (var item in lista)
             {
-                if (item.Local.Equals(nomeEspaço))
+                if (item.Nome.Equals(nomeAdicional))
                 {
                     preco = item.Preco;
                     break;
@@ -22,21 +22,21 @@ namespace RoleTOPMVC.Repositories
             }
             return preco;
         }
-        public List<Espaço> ObterTodos()
+        public List<Adicional> ObterTodos()
         {
-            List<Espaço> espaços = new List<Espaço>();
+            List<Adicional> adicionais = new List<Adicional>();
             string[] locais = File.ReadAllLines(PATH);
             
             foreach (var local in locais)
             {
-                Espaço e = new Espaço();
+                Adicional e = new Adicional();
                 string [] dados = local.Split(";");
-                e.Local = dados[0];
+                e.Nome = dados[0];
                 e.Preco = double.Parse(dados[1]);
-                espaços.Add(e);
+                adicionais.Add(e);
             }
 
-            return espaços;
+            return adicionais;
         }
     }
 }

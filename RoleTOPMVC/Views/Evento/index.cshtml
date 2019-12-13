@@ -1,0 +1,41 @@
+@model RoleTOPMVC.ViewModels.EventoViewModel
+<main>
+<div class="container">
+<form action='@Url.Action("Registrar", "Evento")' class="form-contact" method="POST" tabindex="1">
+<input type="text" class="form-contact-input" name="nome" placeholder="Nome" required />
+<input type="email" class="form-contact-input" name="email" placeholder="Email" required />
+<input type="tel" class="form-contact-input" name="telefone" placeholder="Telefone" required/>
+<input type="tel" class="form-contact-input" name="CPF" placeholder="CPF" required/>
+<label for="tipo_evento"><i class-"fa fa-glass"></i>Tipo de evento</label>
+
+<select id="tipo_evento" name="Espaço" placeholder="Tipo de evento" required>
+    <option value="">Selecione seu tipo de evento</option>
+    @foreach (var espaços in Model.Espaços)
+    {
+        <option value=@espaços.Local> Evento @espaços.Local @espaços.Preco </option>
+    }
+</select>
+
+<label for="tipo_adicional"><i class-"fa fa-glass"></i>Adicional</label>
+
+<select id="tipo_adicional" name="Adicional" placeholder="Adicionais" >
+    <option value="">Selecione sua preferencia adicional</option>
+    @foreach (var adicionais in Model.Adicionais)
+    {
+        <option value=@adicionais.Nome> Adicional @adicionais.Nome @adicionais.Preco </option>
+    }
+</select>
+
+    <div id="pagamento">
+        <label for="dia">Selecione o dia do seu evenTOP:</label>
+        <input id="dia" name="data_evento" type="date">
+        <input type="submit" value="Cadastrar evento >>"></input>
+    </div>
+    </form>
+    <br>
+    <div id="voltarpgprinc">
+
+<li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Cliente")'class="active"><<<  Voltar para sua página principal</a></li>
+</div>
+</div>
+</main>

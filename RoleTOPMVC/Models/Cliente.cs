@@ -16,7 +16,7 @@ namespace RoleTOPMVC.Models
         {
 
         }
-        public Cliente(string Nome, string Endereco, string CPF, string Senha, string Email, DateTime DataNascimento)
+        public Cliente(string Nome, string CPF, string Telefone, string Senha, string Email, DateTime DataNascimento)
         
         {
             this.Nome = Nome;

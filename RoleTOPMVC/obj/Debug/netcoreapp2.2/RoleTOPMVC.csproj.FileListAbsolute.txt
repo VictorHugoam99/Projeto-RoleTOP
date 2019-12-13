@@ -87,7 +87,6 @@ C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2
 C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2.2\RoleTOPMVC.TagHelpers.output.cache
 C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2.2\RoleTOPMVC.RazorCoreGenerate.cache
 C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2.2\Razor\Views\Admin\DashBoard.g.cshtml.cs
-C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2.2\Razor\Views\Aluguel\index.g.cshtml.cs
 C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cadastro\index.g.cshtml.cs
 C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\index.g.cshtml.cs
 C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\login.g.cshtml.cs
@@ -108,3 +107,5 @@ C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2
 C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2.2\RoleTOPMVC.csproj.CopyComplete
 C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_HeaderHomePage.g.cshtml.cs
 C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Erro.g.cshtml.cs
+C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2.2\Razor\Views\Evento\index.g.cshtml.cs
+C:\Users\23871167800\Desktop\Projeto-RoleTOPmvc\RoleTOPMVC\obj\Debug\netcoreapp2.2\Razor\Views\Evento\Historico.g.cshtml.cs

@@ -1,7 +1,9 @@
 namespace RoleTOPMVC.Models
 {
-    public class Espaço : Aluguel
+    public class Espaço
     {
+        public string Local {get;set;}
+        public double Preco {get;set;}
         public Espaço ()
         {
 
@@ -9,7 +11,7 @@ namespace RoleTOPMVC.Models
 
         public Espaço(string local, double preco)
         {
-            this.Local = Local;
+            this.Local = local;
             this.Preco = preco;
         }
     }

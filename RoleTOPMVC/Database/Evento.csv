@@ -1,2 +1,1 @@
-evento = pedido
-espaço = hamburgueres
+id=1;status_evento=1;cliente_nome=Vitao;cliente_cpf=;cliente_telefone=10132015;cliente_email=victor.hugoam99@gmail.com;espaco_preco=15000;data_evento=02/03/2020 00:00:00;preco_total=15000;adicional_evento=;adicional_preco=0

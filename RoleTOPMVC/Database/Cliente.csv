@@ -1,0 +1,3 @@
+tipo_usuario=1;nome=Vitao;email=victor.hugoam99@gmail.com;senha=001212;cpf=123456789;telefone=11912341234;data_nascimento=25/03/1999 00:00:00
+tipo_usuario=0;nome=admin;email=admin.123@gmail.com;senha=123456;cpf=12345678900;telefone=11123457896;data_nascimento=01/09/2001 00:00:00
+tipo_usuario=1;nome=Alexandre;email=alexandre@gmail.com;senha=123456;cpf=12345678901;telefone=11912341235;data_nascimento=02/03/2001 00:00:00

@@ -6,5 +6,6 @@ namespace RoleTOPMVC.ViewModels
     public class HistoricoViewModel : BaseViewModel
     {
         public List<Evento> Eventos {get;set;}
+        
     }
 }

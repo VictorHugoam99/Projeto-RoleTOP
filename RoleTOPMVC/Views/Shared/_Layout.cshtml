@@ -25,11 +25,23 @@
     
 	<link rel="stylesheet" type="text/css" href="~/css/login.css">
     }
+    @if ("Index".Equals(@Model.NomeView))
+    {
+        <link rel="stylesheet" href="~/css/Telauser.css">
+    }
+    @if ("Evento".Equals(@Model.NomeView))
+    {
+        <link rel="stylesheet" href="~/css/Cadastroeventos.css">
+    }
+    @if ("Dashboard".Equals(@Model.NomeView))
+    {
+        <link href="~/css/DashBoardRT.css" rel="stylesheet" type="text/css">
+    }
 
 </head>
 
 <header>
-            @if(!"Cadastro".Equals(@Model.NomeView) && !"Login".Equals(@Model.NomeView)) 
+            @if(!"Cadastro".Equals(@Model.NomeView) && !"Login".Equals(@Model.NomeView) && !"Evento".Equals(@Model.NomeView) && !"Dashboard".Equals(@Model.NomeView))
             {
                         <div id="logo-area">
                         
@@ -40,6 +52,7 @@
                             </div>
                             <hr>
                             <nav>
+
                                 <div class="section-container">
                                     <ul>
                                         <li id="bt-mobile-menu">
@@ -48,6 +61,8 @@
                                                 <i class="fa fa-bars"></i>
                                             </a>
                                         </li>
+                                @if(string.IsNullOrEmpty(@Model.UsuarioEmail))
+                                {
                                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")'class="active">Principal</a></li>
                                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#nosso-espaço'>Espaço</a></li>
                                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#Eventos'>Eventos</a></li>
@@ -55,6 +70,22 @@
                                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Home")#perguntas-frequentes'>Dúvidas</a></li>
                                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cadastro" asp-action= "index" class="active">Cadastre-se</a></li>
                                         <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action= "Login" class="active">Login</a></li>
+                                }
+                                else
+                                {
+                                        
+
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Cliente")'class="active">Principal</a></li>
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Cliente")#nosso-espaço'>Espaço</a></li>
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Cliente")#Eventos'>Eventos</a></li>
+                                        @if (@Model.UsuarioEmail == "admin.123@gmail.com")
+                                        {
+                                            <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Dashboard", "Admin")'>DashBoard</a></li>
+                                        }
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Historico", "Evento")'>Historico</a></li>
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href='@Url.Action("Index", "Cliente")#Local'>Local</a></li>
+                                        <li class="bt-common-menu"><a onclick="toggleMobileMenu()" asp-controller="Evento" asp-action="Index" >Faça o seu evento</a></li>
+                                }
                                         
                                     </ul>
                                 </div>
@@ -69,7 +100,7 @@
 @RenderBody()
 
             <footer>
-            @if(!"Cadastro".Equals(@Model.NomeView) && !"Login".Equals(@Model.NomeView))
+            @if(!"Cadastro".Equals(@Model.NomeView) && !"Login".Equals(@Model.NomeView) && !"Evento".Equals(@Model.NomeView) && !"Dashboard".Equals(@Model.NomeView))
             {
                             <div id="contato">
                                 <h3>Contato</h3>
@@ -102,5 +133,5 @@
 
             }
             
-           
+
             </footer>

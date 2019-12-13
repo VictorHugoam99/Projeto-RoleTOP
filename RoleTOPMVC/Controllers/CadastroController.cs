@@ -22,7 +22,7 @@ namespace RoleTOPMVC.Controllers {
         public IActionResult CadastrarCliente (IFormCollection form) {
             ViewData["Action"] = "Cadastro";
             try {
-                Cliente cliente = new Cliente (form["nome"], form["CPF"], form["telefone"], form["senha"], form["email"], DateTime.Parse (form["data-nascimento"]));
+                Cliente cliente = new Cliente (form["nome"], form["CPF"], form["tel"], form["senha"], form["email"], DateTime.Parse (form["data-nascimento"]));
                 cliente.TipoUsuario = (uint) TiposUsuario.CLIENTE;
                 clienteRepository.Inserir (cliente);
 

@@ -1,18 +1,22 @@
 <main>
     <div class="container">
         <h2 style="text-align:center"> Cadastro</h2>
-        <form method="POST" action='@Url.Action("CadastrarCliente", "Cadastro")' class="form-contact" >
+        <form method="POST" action ='@Url.Action("CadastrarCliente", "Cadastro")' class="form-contact" >
             <input type="text" class="form-contact-input" name="nome" placeholder="Nome" required />
-            <input type="tel" class="form-contact-input" name="senha" placeholder="Senha" required/>
-            <input type="tel" class="form-contact-input" name="senha" placeholder="Confirme sua senha" required/>
+            <input type="text" class="form-contact-input" name="senha" placeholder="Senha" required/>
+            <!-- <input type="tel" class="form-contact-input" name="senha-confirm" placeholder="Confirme sua senha" required/> -->
             <input type="email" class="form-contact-input" name="email" placeholder="Email" required />
-            <input type="email" class="form-contact-input" name="email" placeholder="Confirme seu Email" required />
-            <input type="tel" class="form-contact-input" name="tel" placeholder="Telefone" required/>
-            <input type="tel" class="form-contact-input" name="tel" placeholder="Telefone"/>
-            <a asp-controller= "Cliente" asp-Action= "index">Criar conta  >></a>
+            <!-- <input type="email" class="form-contact-input" name="email" placeholder="Confirme seu Email" required /> -->
+            <input type="text" class="form-contact-input" name="tel" placeholder="Telefone" required/>
+            <input type="text" class="form-contact-input" name="CPF" placeholder="CPF" required/>
+            <input type="date" class="form-contact-input" name="data-nascimento" placeholder="Data de Nascimento" required/>
+            <!-- <input type="tel" class="form-contact-input" name="tel" placeholder="Telefone"/> -->
+            <!-- <a asp-controller= "Cliente" asp-Action= "index">Criar conta  >></a> -->
+            <input type="submit" value="Criar conta"/>
         </form>
         <div id="voltarpgprinc">
-            <li><a asp-controller= "Home" asp-Action= "Index"><< Voltar para página principal</a></li>
+            <a asp-controller= "Home" asp-Action= "Index"><span><< Voltar a página principal</span></a>
         </div>
     </div>
 </main>
+

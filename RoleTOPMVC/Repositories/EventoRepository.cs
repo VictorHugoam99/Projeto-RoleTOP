@@ -51,14 +51,16 @@ namespace RoleTOPMVC.Repositories
                 Evento evento = new Evento();
 
                 evento.Id = ulong.Parse(ExtrairValorDoCampo("id", linha));
-                evento.Status = uint.Parse(ExtrairValorDoCampo("status_pedido", linha));
+                evento.Status = uint.Parse(ExtrairValorDoCampo("status_evento", linha));
                 evento.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                 evento.Cliente.CPF = ExtrairValorDoCampo("cliente_cpf", linha);
                 evento.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
                 evento.Cliente.Email = ExtrairValorDoCampo("cliente_email", linha);
                 evento.Espaço.Preco = double.Parse(ExtrairValorDoCampo("espaco_preco", linha));
+                evento.DataDoPedido = DateTime.Parse(ExtrairValorDoCampo("data_evento", linha));
                 evento.PrecoTotal = double.Parse(ExtrairValorDoCampo("preco_total", linha));
-                evento.DataDoPedido = DateTime.Parse(ExtrairValorDoCampo("data_pedido", linha));
+                evento.Adicional.Nome = ExtrairValorDoCampo("adicional_evento", linha);
+                evento.Adicional.Preco = double.Parse(ExtrairValorDoCampo("adicional_preco", linha));
 
                 eventos.Add(evento);
             }
@@ -108,8 +110,9 @@ namespace RoleTOPMVC.Repositories
         {
             Cliente c = evento.Cliente;
             Espaço e = evento.Espaço;
+            Adicional adc = evento.Adicional;
             
-            return $"id={evento.Id};status_pedido={evento.Status};cliente_nome={c.Nome};cliente_endereco={c.CPF};cliente_CPF={c.Telefone};cliente_email={c.Email};espaço_preco={e.Preco};data_evento={evento.DataDoPedido};preco_total={evento.PrecoTotal}";
+            return $"id={evento.Id};status_evento={evento.Status};cliente_nome={c.Nome};cliente_cpf={c.CPF};cliente_telefone={c.Telefone};cliente_email={c.Email};espaco_preco={e.Preco};data_evento={evento.DataDoPedido};preco_total={evento.PrecoTotal};adicional_evento={evento.Adicional.Nome};adicional_preco={evento.Adicional.Preco}";
         }
     }
 }

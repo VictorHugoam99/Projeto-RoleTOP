@@ -11,13 +11,15 @@ namespace RoleTOPMVC.Models
         public DateTime DataDoPedido {get; set;}
         public double PrecoTotal {get; set;}
         public uint Status {get;set;}
+        public Adicional Adicional {get;set;}
 
         public Evento()
         {
             this.Cliente = new Cliente();
             this.Espaço = new Espaço();
             this.Id = 0;
-            this.Status = (uint) StatusAluguel.PENDENTE;
+            this.Status = (uint) StatusEvento.PENDENTE;
+            this.Adicional = new Adicional();
         }
     }
 }
